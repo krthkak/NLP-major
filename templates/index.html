@@ -15,7 +15,7 @@
 	<h1>SENTIMEMTAL Analysis</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
+    <form action="{{ url_for('predicts')}}"method="post">
     	<input type="text" name="review" placeholder="Enter Review" required="required" />
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
