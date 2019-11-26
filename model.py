@@ -51,8 +51,3 @@ from sklearn.naive_bayes import GaussianNB
 classifier = GaussianNB()
 classifier.fit(X_train, y_train)
 pickle.dump(classifier,open("Gaussclass.pkl","wb"))
-
-
-
-
-
