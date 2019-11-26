@@ -30,7 +30,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 ti = TfidfVectorizer(max_features = 1500,min_df = 2)
 out = ti.fit_transform(li).toarray()
 """    
-#crecating the bag of models
+#creating the bag of models
 
 from sklearn.feature_extraction.text import CountVectorizer
 cv=CountVectorizer()
