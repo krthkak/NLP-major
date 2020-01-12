@@ -2,7 +2,6 @@ import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
 import json,re
-from textblob import TextBlob
 
 app = Flask(__name__)
 PS = pickle.load(open('portStem.pkl', 'rb'))
