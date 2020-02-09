@@ -1,7 +1,7 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
-import json,re
+import jsonlib as json,regex as re
 
 app = Flask(__name__)
 PS = pickle.load(open('portStem.pkl', 'rb'))
@@ -21,19 +21,25 @@ def predicts():
     '''
     senti = {0:"Negative",1:"Positive"}
     out = request.form.get('review')
-    
+
     review = re.sub('[^a-zA-Z]', ' ' ,out)
     review = review.lower()
     review = review.split()
     review = [PS.stem(word) for word in review if not word in set(stop_words)]
     review = " ".join(review)
-    
+
     corpus = [review]
     x=CV.transform(corpus).toarray()
     pred = model.predict(x)
 
     output = senti[pred[0]]
     return render_template('index.html', prediction_text='The Sentiment of the review is {}'.format(output))
+
+@app.route('/pic')
+def hom():
+    return "Welcome to the sentimental analyser"
+
+
 
 
 if __name__ == "__main__":

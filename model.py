@@ -22,14 +22,14 @@ for i in range(0,1000):
     review = [ps.stem(word) for word in review if not word in set(stopwords.words("english"))]
     review = " ".join(review)
     corpus.append(review)
-    
+
 """#sample data
-    
+
 #Term frequency and Inverse term frequency
 from sklearn.feature_extraction.text import TfidfVectorizer
 ti = TfidfVectorizer(max_features = 1500,min_df = 2)
 out = ti.fit_transform(li).toarray()
-"""    
+"""
 #creating the bag of models
 
 from sklearn.feature_extraction.text import CountVectorizer
