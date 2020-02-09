@@ -1,1 +1,1 @@
-web:gunicorn appnlp.wsgi
+web:gunicorn app.wsgi
