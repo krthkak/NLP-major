@@ -14,7 +14,7 @@ with open("stopwords.json","r") as file:
 def home():
     return render_template('index.html')
 
-@app.route('/predict',methods=['GET'])
+@app.route('/predict',methods=['POST'])
 def predicts():
     '''
     For rendering results on HTML GUI
