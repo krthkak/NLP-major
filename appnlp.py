@@ -1,7 +1,7 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
-import jsonlib as json,regex as re
+import json,regex as re
 
 app = Flask(__name__)
 PS = pickle.load(open('portStem.pkl', 'rb'))
