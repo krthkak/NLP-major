@@ -4,21 +4,21 @@ import pickle
 import json,regex as re
 
 app = Flask(__name__)
-'''PS = pickle.load(open('portStem.pkl', 'rb'))
+PS = pickle.load(open('portStem.pkl', 'rb'))
 CV = pickle.load(open('Countvec.pkl','rb'))
 model = pickle.load(open('Gaussclass.pkl','rb'))
 with open("stopwords.json","r") as file:
     stop_words = json.load(file)["words"]
-'''
+
 @app.route('/')
 def home():
     #return render_template('index.html')
     return '<h1>Deployed on heroku!</h1>'
 
-'''@app.route('/predict',methods=['POST'])
+@app.route('/predict',methods=['POST'])
 def predicts():
     '''
-   # For rendering results on HTML GUI
+     For rendering results on HTML GUI
     '''
     senti = {0:"Negative",1:"Positive"}
     out = request.form.get('review')
@@ -35,6 +35,6 @@ def predicts():
 
     output = senti[pred[0]]
     return render_template('index.html', prediction_text='The Sentiment of the review is {}'.format(output))
-'''
+
 if __name__ == "__main__":
     app.run(debug=True)
