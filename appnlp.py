@@ -12,7 +12,8 @@ with open("stopwords.json","r") as file:
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    #return render_template('index.html')
+    return '<h1>Deployed on heroku!</h1>'
 
 @app.route('/predict',methods=['POST'])
 def predicts():
