@@ -12,13 +12,12 @@ with open("stopwords.json","r") as file:
 
 @app.route('/')
 def home():
-    #return render_template('index.html')
-    return '<h1>Deployed on heroku!</h1>'
+    return render_template('index.html')
 
 @app.route('/predict',methods=['POST'])
 def predicts():
     '''
-     For rendering results on HTML GUI
+    For rendering results on HTML GUI
     '''
     senti = {0:"Negative",1:"Positive"}
     out = request.form.get('review')
