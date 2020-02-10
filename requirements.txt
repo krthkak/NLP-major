@@ -5,5 +5,8 @@ itsdangerous==1.1.0
 Jinja2==2.11.1
 MarkupSafe==1.1.1
 numpy==1.18.1
+<<<<<<< HEAD
 regex==2020.1.8
+=======
+>>>>>>> 3cb9d6bd9c98a035f1bf96afddc5ef70c7898a79
 Werkzeug==1.0.0
