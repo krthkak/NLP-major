@@ -14,7 +14,7 @@ with open("stopwords.json","r") as file:
 def home():
     return render_template('index.html')
 
-@app.route('/predict',methods=['GET'])
+@app.route('/predict',methods=['POST'])
 def predicts():
     '''
     For rendering results on HTML GUI
@@ -34,13 +34,6 @@ def predicts():
 
     output = senti[pred[0]]
     return render_template('index.html', prediction_text='The Sentiment of the review is {}'.format(output))
-
-@app.route('/pic')
-def hom():
-    return "Welcome to the sentimental analyser"
-
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)
