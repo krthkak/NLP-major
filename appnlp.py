@@ -20,20 +20,20 @@ def predicts():
     For rendering results on HTML GUI
     '''
     senti = {0:"Negative",1:"Positive"}
-    out = request.form.get('review')
+    out = request.args.get("query")
+    return str(out)
+#     review = re.sub('[^a-zA-Z]', ' ' ,out)
+#     review = review.lower()
+#     review = review.split()
+#     review = [PS.stem(word) for word in review if not word in set(stop_words)]
+#     review = " ".join(review)
 
-    review = re.sub('[^a-zA-Z]', ' ' ,out)
-    review = review.lower()
-    review = review.split()
-    review = [PS.stem(word) for word in review if not word in set(stop_words)]
-    review = " ".join(review)
+#     corpus = [review]
+#     x=CV.transform(corpus).toarray()
+#     pred = model.predict(x)
 
-    corpus = [review]
-    x=CV.transform(corpus).toarray()
-    pred = model.predict(x)
-
-    output = senti[pred[0]]
-    return render_template('index.html', prediction_text='The Sentiment of the review is {}'.format(output))
+#     output = senti[pred[0]]
+#     return render_template('index.html', prediction_text='The Sentiment of the review is {}'.format(output))
 
 if __name__ == "__main__":
     app.run(debug=True)
