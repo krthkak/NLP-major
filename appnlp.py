@@ -12,15 +12,16 @@ with open("stopwords.json","r") as file:
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return "Api Working"
 
-@app.route('/predict',methods=['POST'])
+@app.route('/predict/',methods=['POST'])
 def predicts():
     '''
     For rendering results on HTML GUI
     '''
     senti = {0:"Negative",1:"Positive"}
-    out = request.form.get('review')
+    out = request.get_json()
+    out = out["query"]
 
     review = re.sub('[^a-zA-Z]', ' ' ,out)
     review = review.lower()
@@ -33,7 +34,7 @@ def predicts():
     pred = model.predict(x)
 
     output = senti[pred[0]]
-    return render_template('index.html', prediction_text='The Sentiment of the review is {}'.format(output))
+    return jsonify("Output":output)
 
 if __name__ == "__main__":
     app.run(debug=True)
