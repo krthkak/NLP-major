@@ -32,7 +32,7 @@ def predicts():
     pred = model.predict(x)
 
     output = senti[pred[0]]
-    return render_template('index.html', prediction_text='The Sentiment of the review is {}'.format(output))
+    return jsonify({"Output":output})
 
 if __name__ == "__main__":
     app.run(debug=True)
