@@ -12,7 +12,7 @@ with open("stopwords.json","r") as file:
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return "api working"
 
 @app.route('/predict',methods=['POST'])
 def predicts():
